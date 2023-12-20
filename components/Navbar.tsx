@@ -6,14 +6,7 @@ import { ReactNode, useContext, useEffect, useState } from "react";
 import { BiBook, BiHome, BiMovie } from "react-icons/bi";
 import { BsMagic, BsPeople } from "react-icons/bs";
 import { GiStandingPotion } from "react-icons/gi";
-import {
-  MdClose,
-  MdDarkMode,
-  MdLightMode,
-  MdMenu,
-  MdOutlineBookmark,
-} from "react-icons/md";
-import { YAxis } from "./Movement";
+import { MdClose, MdDarkMode, MdLightMode, MdMenu } from "react-icons/md";
 
 export function Navbar({ children }: any) {
   const [opened, setOpened] = useState<boolean>(false);
