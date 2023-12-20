@@ -1,9 +1,18 @@
-import api from "@/api";
-import { useEffect, useState } from "react";
+"use client";
+import Image from "next/image";
+import Link from "next/link";
 
-export function BooksCard() {
+export function BookCard(book: BookProps) {
   return (
-    <></>
-    // <div>{data && data.map((book: any) => <p key={book.id}>Teste</p>)}</div>
+    <Link href={`/book/${book.attributes.slug}`}>
+      <Image
+        src={book.attributes.cover}
+        alt={book.attributes.slug}
+        width={300}
+        height={300}
+        className="w-full h-auto rounded-xl"
+      />
+      <p></p>
+    </Link>
   );
 }
