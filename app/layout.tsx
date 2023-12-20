@@ -6,7 +6,7 @@ import DarkModeProvider from "@/contexts/DarkModeContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Portal Mágico",
+  title: "Portal da Magia",
   description: "Feito por Pedro Lugon",
 };
 
@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <DarkModeProvider>
       <html lang="pt-BR">
-        <body className={inter.className}>{children}</body>
+        <body className={inter.className + " customCursor"}>{children}</body>
       </html>
     </DarkModeProvider>
   );

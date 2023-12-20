@@ -2,15 +2,16 @@
 
 import { motion } from "framer-motion";
 
-interface RotationProps {
+interface YAxisProps {
   label: string;
+  animate: number[];
   className?: string;
 }
 
-export function Rotation({ label, className }: RotationProps) {
+export function YAxis({ label, animate, className }: YAxisProps) {
   return (
     <motion.span
-      animate={{ rotate: [0, 20, 0] }}
+      animate={{ y: animate }}
       transition={{
         duration: 5,
         ease: "easeInOut",

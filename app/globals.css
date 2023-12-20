@@ -8,10 +8,6 @@
 /* #717679	 */
 /* #efeee9	 */
 
-.defaultContainer {
-  @apply bg-[#efeee9] min-h-screen py-4 px-12 dark:bg-[#000];
-}
-
 h1, h2, h3, h4, h5, h6, p {
   @apply text-[#000] dark:text-[#efeee9];
 }
@@ -23,4 +19,18 @@ h1 {
 
 h2 {
   @apply font-bold text-xl
+}
+
+.defaultContainer {
+  @apply bg-[#efeee9] min-h-screen py-4 px-12 dark:bg-[#000];
+}
+
+.glassEffect {
+  @apply rounded-[8px] backdrop-blur-sm p-2 bg-[#efeee9]/50 dark:bg-[#000]/50;
+}
+
+.customCursor {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🕯️</text></svg>")
+      16 0,
+    auto;
 }
