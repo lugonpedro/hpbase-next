@@ -2,26 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+/* #641e1e	 */
+/* #c39a1c	 */
+/* #3d2f22	 */
+/* #717679	 */
+/* #efeee9	 */
+
+.defaultContainer {
+  @apply bg-[#efeee9] min-h-screen py-4 px-12 dark:bg-[#000];
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+h1, h2, h3, h4, h5, h6, p {
+  @apply text-[#000] dark:text-[#efeee9];
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+h1 {
+  @apply font-bold text-2xl
+}
+
+
+h2 {
+  @apply font-bold text-xl
 }
