@@ -30,7 +30,7 @@ export default async function BookDetail(props: IPageProps) {
     <>
       <Navbar>
         <div className="defaultContainer flex flex-col gap-8">
-          <div className="max-w-[1440px] 2xl:self-center">
+          <div className="max-w-[1200px] 2xl:self-center">
             {data && (
               <>
                 <div className="flex flex-col md:flex-row md:gap-4">
@@ -59,7 +59,7 @@ export default async function BookDetail(props: IPageProps) {
                   </div>
                 </div>
                 <div className="flex flex-col gap-2 mt-4">
-                  <p>Capítulos:</p>
+                  <p className="font-bold">Capítulos:</p>
                   {chapters.map((chapter, index) => (
                     <p key={chapter.id}>
                       {index + 1}. {chapter.attributes.title}
