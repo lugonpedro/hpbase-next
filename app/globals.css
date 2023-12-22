@@ -29,6 +29,10 @@ h2 {
   @apply rounded-[8px] backdrop-blur-sm px-4 py-2 bg-[#efeee9]/50 dark:bg-[#000]/50;
 }
 
+.textLink {
+  @apply text-red-600 underline font-semibold;
+}
+
 .customCursor {
   cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🕯️</text></svg>")
       16 0,
