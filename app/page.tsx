@@ -122,7 +122,7 @@ export default async function Home() {
               <div className="mt-6 glassEffect">
                 <div className="mb-4 flex flex-row items-center justify-between">
                   <h2>Livros</h2>
-                  <Link href="/" className="textLink">
+                  <Link href="/books" className="textLink">
                     Ver Todos
                   </Link>
                 </div>
@@ -138,7 +138,7 @@ export default async function Home() {
               <div className="mt-6 glassEffect">
                 <div className="mb-4 flex flex-row items-center justify-between">
                   <h2>Personagens</h2>
-                  <Link href="/" className="textLink">
+                  <Link href="/characters" className="textLink">
                     Ver Todos
                   </Link>
                 </div>
@@ -154,7 +154,7 @@ export default async function Home() {
               <div className="mt-6 glassEffect">
                 <div className="mb-4 flex flex-row items-center justify-between">
                   <h2>Filmes</h2>
-                  <Link href="/" className="textLink">
+                  <Link href="/movies" className="textLink">
                     Ver Todos
                   </Link>
                 </div>
@@ -170,7 +170,7 @@ export default async function Home() {
               <div className="mt-6 glassEffect">
                 <div className="mb-4 flex flex-row items-center justify-between">
                   <h2>Poções</h2>
-                  <Link href="/" className="textLink">
+                  <Link href="/potions" className="textLink">
                     Ver Todos
                   </Link>
                 </div>
@@ -186,7 +186,7 @@ export default async function Home() {
               <div className="mt-6 glassEffect">
                 <div className="mb-4 flex flex-row items-center justify-between">
                   <h2>Magias</h2>
-                  <Link href="/" className="textLink">
+                  <Link href="/spells" className="textLink">
                     Ver Todos
                   </Link>
                 </div>
