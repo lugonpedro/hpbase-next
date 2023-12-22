@@ -9,12 +9,11 @@ import { MdCalendarToday, MdPerson } from "react-icons/md";
 
 export default function Books() {
   const [data, setData] = useState<BookProps[]>([]);
-  const [filteredData, setFilteredData] = useState<BookProps[]>([]);
   const [search, setSearch] = useState<string>("");
 
   useEffect(() => {
     async function getData() {
-      const res = await api.get("/books");
+      const res = await api.get(`/books?filter[title_cont]=${search}`);
 
       if (res == null) {
         setData([]);
@@ -25,28 +24,13 @@ export default function Books() {
     }
 
     getData();
-  }, []);
-
-  useEffect(() => {
-    async function getSearch() {
-      const res = await api.get(`/books?filter[title_cont]=${search}`);
-
-      if (res == null) {
-        setFilteredData([]);
-        return;
-      }
-
-      setFilteredData(res.data.data);
-    }
-
-    getSearch();
   }, [search]);
 
   return (
     <>
       <Navbar>
         <div className="defaultContainer flex flex-col gap-8">
-          <div className="max-w-[1440px] 2xl:self-center">
+          <div className="max-w-[1200px] xl:w-[1200px] 2xl:self-center">
             <div className="flex flex-col gap-4">
               <h2>Livros</h2>
               <SearchInput
@@ -55,7 +39,6 @@ export default function Books() {
               />
               <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
                 {data &&
-                  !filteredData &&
                   data.map((book: BookProps) => (
                     <Link href={`/books/${book.attributes.slug}`} key={book.id}>
                       <Image
@@ -80,32 +63,7 @@ export default function Books() {
                       </div>
                     </Link>
                   ))}
-                {filteredData &&
-                  filteredData.map((book: BookProps) => (
-                    <Link href={`/books/${book.attributes.slug}`} key={book.id}>
-                      <Image
-                        src={book.attributes.cover}
-                        alt={book.attributes.slug}
-                        width={300}
-                        height={300}
-                        className="w-full rounded-xl object-cover object-top"
-                      />
-                      <p>{book.attributes.title}</p>
-                      <div className="flex flex-row items-center gap-2 text-[#000] dark:text-[#efeee9]">
-                        <MdPerson />
-                        <p>{book.attributes.author}</p>
-                      </div>
-                      <div className="flex flex-row items-center gap-2 text-[#000] dark:text-[#efeee9]">
-                        <MdCalendarToday />
-                        <p>
-                          {new Date(
-                            book.attributes.release_date
-                          ).toLocaleDateString("pt-br")}
-                        </p>
-                      </div>
-                    </Link>
-                  ))}
-                {filteredData.length === 0 && <p>Nada foi encontrado</p>}
+                {data.length === 0 && <p>Nada foi encontrado</p>}
               </div>
             </div>
           </div>
