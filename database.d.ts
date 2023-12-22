@@ -132,3 +132,19 @@ interface SpellProps {
     self: string;
   };
 }
+
+interface ChapterProps {
+  id: string;
+  type: string;
+  attributes: {
+    slug: string;
+    order: numberstring;
+    summary: string;
+    title: string;
+  };
+}
+
+interface IPageProps {
+  params: { slug: string };
+  searchParams: Record<string | string[], string | undefined>;
+}
