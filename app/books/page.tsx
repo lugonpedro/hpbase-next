@@ -35,11 +35,11 @@ export default async function Books() {
                       className="w-full rounded-xl object-cover object-top"
                     />
                     <p>{book.attributes.title}</p>
-                    <div className="flex flex-row items-center gap-2">
+                    <div className="flex flex-row items-center gap-2 text-[#000] dark:text-[#efeee9]">
                       <MdPerson />
                       <p>{book.attributes.author}</p>
                     </div>
-                    <div className="flex flex-row items-center gap-2">
+                    <div className="flex flex-row items-center gap-2 text-[#000] dark:text-[#efeee9]">
                       <MdCalendarToday />
                       <p>
                         {new Date(
