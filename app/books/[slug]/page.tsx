@@ -3,8 +3,6 @@ import { Navbar } from "@/components/Navbar";
 import Image from "next/image";
 
 export default async function BookDetail(props: IPageProps) {
-  // const [chapters, setChapters] = useState<ChapterProps>()
-
   async function getData() {
     const res = await api.get(`/books/${props.params.slug}`);
 
