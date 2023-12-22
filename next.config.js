@@ -8,6 +8,11 @@ const nextConfig = {
         hostname: "www.wizardingworld.com",
         port: "",
       },
+      {
+        protocol: "https",
+        hostname: "static.wikia.nocookie.net",
+        port: "",
+      },
     ],
   },
 };
