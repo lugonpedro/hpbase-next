@@ -148,3 +148,22 @@ interface IPageProps {
   params: { slug: string };
   searchParams: Record<string | string[], string | undefined>;
 }
+
+interface APIProps {
+  meta: {
+    pagination: {
+      current: number;
+      next?: number;
+      last?: number;
+      records: number;
+    };
+    copyright: string;
+    generated_at: string;
+  };
+  links: {
+    self: string;
+    current: string;
+    next: string;
+    last: string;
+  };
+}
