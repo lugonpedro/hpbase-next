@@ -80,7 +80,7 @@ export default async function Home() {
     <>
       <Navbar>
         <div className="defaultContainer flex flex-col gap-8 bg-[url('/castle.jpg')] bg-no-repeat bg-bottom bg-cover 2xl:bg-center">
-          <div className="max-w-[1200px] 2xl:self-center">
+          <div className="max-w-[1200px] xl:self-center 2xl:w-[1200px]">
             <div className="flex flex-col gap-4 glassEffect">
               <h2>Bem-vindo ao Portal da Magia</h2>
               <p>

@@ -32,10 +32,10 @@ export function Navbar({ children }: any) {
 
   return (
     <div>
-      <div className="w-screen overflow-x-hidden fixed z-50 h-16 bg-[#c39a1c] flex flex-row items-center justify-between px-4 xl:hidden">
+      <div className="w-screen overflow-x-hidden fixed z-50 h-16 bg-[#c39a1c] flex flex-row items-center justify-between px-4 2xl:hidden">
         <h1 className="text-[#000] drop-shadow-md">🧙‍♀️ Portal da Magia</h1>
         <MdMenu
-          className="h-8 w-8 text-[#000]"
+          className="h-8 w-8 text-[#000] cursor-pointer"
           onClick={() => setOpened(true)}
         />
         <AnimatePresence>
@@ -52,7 +52,7 @@ export function Navbar({ children }: any) {
                   🧙‍♀️ Portal da Magia
                 </h1>
                 <MdClose
-                  className="h-8 w-8 text-[#efeee9]"
+                  className="h-8 w-8 text-[#efeee9] cursor-pointer"
                   onClick={() => setOpened(false)}
                 />
               </div>
@@ -104,7 +104,7 @@ export function Navbar({ children }: any) {
       </div>
 
       <div className="flex flex-row">
-        <div className="bg-[#000] p-4 hidden flex-col gap-2 h-screen w-[300px] xl:flex fixed">
+        <div className="bg-[#000] p-4 hidden flex-col gap-2 h-screen w-[300px] 2xl:flex fixed">
           <h1 className="text-[#c39a1c] drop-shadow-md px-4 mb-6">
             🧙‍♀️ Portal da Magia
           </h1>
@@ -169,7 +169,7 @@ export function Navbar({ children }: any) {
             🕯️
           </motion.span> */}
         </div>
-        <div className="w-screen h-screen pt-16 xl:pt-0 xl:pl-[300px]">
+        <div className="w-screen h-screen pt-16 2xl:pt-0 2xl:pl-[300px]">
           {children}
         </div>
       </div>
@@ -209,7 +209,7 @@ function DarkModeButton() {
   return (
     <div
       onClick={toggleDarkMode}
-      className="flex flex-row items-center gap-2 text-[#efeee9] text-[14px] font-semibold xl:text-[18px] xl:w-max duration-300 hover:text-[#c39a1c]/80"
+      className="flex flex-row items-center gap-2 text-[#efeee9] text-[14px] font-semibold xl:text-[18px] xl:w-max duration-300 hover:text-[#c39a1c]/80 cursor-pointer"
     >
       {darkMode ? (
         <>

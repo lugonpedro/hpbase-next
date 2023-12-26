@@ -30,7 +30,7 @@ export default async function BookDetail(props: IPageProps) {
     <>
       <Navbar>
         <div className="defaultContainer flex flex-col gap-8">
-          <div className="max-w-[1200px] 2xl:self-center">
+          <div className="max-w-[1200px] xl:self-center 2xl:w-[1200px]">
             {data && (
               <>
                 <div className="flex flex-col md:flex-row md:gap-4">
