@@ -93,7 +93,7 @@ export function Navbar({ children }: any) {
                 />
 
                 <NavbarItem
-                  link="/potions"
+                  link="/spells"
                   icon={<BsMagic className="h-6 w-6" />}
                   title="Magias"
                 />
@@ -144,30 +144,13 @@ export function Navbar({ children }: any) {
             />
 
             <NavbarItem
-              link="/potions"
+              link="/spells"
               icon={<BsMagic className="h-6 w-6" />}
               title="Magias"
             />
           </div>
 
           <div className="mb-8"></div>
-
-          {/* <motion.span
-            animate={{
-              y: [0, 100, 0, 40, 0],
-              x: [0, 200, 0, -20, 0],
-              rotate: [0, 5, 0, -10, 0],
-            }}
-            transition={{
-              duration: 5,
-              ease: "easeInOut",
-              repeat: Infinity,
-              repeatDelay: 5,
-            }}
-            className="text-2xl"
-          >
-            🕯️
-          </motion.span> */}
         </div>
         <div className="w-screen h-screen pt-16 2xl:pt-0 2xl:pl-[300px]">
           {children}
