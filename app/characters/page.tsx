@@ -60,7 +60,6 @@ export default function Characters() {
                         alt={character.attributes.slug}
                         width="300"
                         height="300"
-                        // loading="lazy"
                         className="w-full h-[300px] rounded-xl object-cover object-top"
                       />
                       <p className="text-center">{character.attributes.name}</p>
