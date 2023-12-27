@@ -1,5 +1,6 @@
 "use client";
 import api from "@/api";
+import { GridCard } from "@/components/Card";
 import { SearchInput } from "@/components/Input";
 import { Navbar } from "@/components/Navbar";
 import { Pagination } from "@/components/Pagination";
@@ -51,19 +52,14 @@ export default function Characters() {
               <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
                 {data &&
                   data.data.map((character: CharacterProps) => (
-                    <Link
-                      href={`/characters/${character.attributes.slug}`}
+                    <GridCard
                       key={character.id}
-                    >
-                      <Image
-                        src={character.attributes.image ?? "/dementor.png"}
-                        alt={character.attributes.slug}
-                        width="300"
-                        height="300"
-                        className="w-full h-[300px] rounded-xl object-cover object-top"
-                      />
-                      <p className="text-center">{character.attributes.name}</p>
-                    </Link>
+                      href={`/characters/${character.attributes.slug}`}
+                      image={character.attributes.image}
+                      alt={character.attributes.name}
+                      label={character.attributes.name}
+                      className="w-full h-[300px] rounded-xl object-cover object-top"
+                    />
                   ))}
                 {data && data.data.length === 0 && <p>Nada foi encontrado</p>}
               </div>

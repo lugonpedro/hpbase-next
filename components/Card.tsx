@@ -3,6 +3,29 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+interface GridCardProps {
+  href: string;
+  image: string;
+  alt: string;
+  label: string;
+  className?: string;
+}
+
+export function GridCard(props: GridCardProps) {
+  return (
+    <Link href={props.href}>
+      <Image
+        src={props.image ?? "/dementor.png"}
+        alt={props.alt}
+        width="300"
+        height="300"
+        className={`w-full rounded-xl object-cover object-top ${props.className}`}
+      />
+      <p className="text-center">{props.label}</p>
+    </Link>
+  );
+}
+
 export function BookCard(book: BookProps) {
   return (
     <Link href={`/books/${book.attributes.slug}`}>

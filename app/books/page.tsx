@@ -1,5 +1,6 @@
 "use client";
 import api from "@/api";
+import { GridCard } from "@/components/Card";
 import { SearchInput } from "@/components/Input";
 import { Navbar } from "@/components/Navbar";
 import Image from "next/image";
@@ -40,28 +41,13 @@ export default function Books() {
               <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
                 {data &&
                   data.map((book: BookProps) => (
-                    <Link href={`/books/${book.attributes.slug}`} key={book.id}>
-                      <Image
-                        src={book.attributes.cover}
-                        alt={book.attributes.slug}
-                        width={300}
-                        height={300}
-                        className="w-full rounded-xl object-cover object-top"
-                      />
-                      <p>{book.attributes.title}</p>
-                      <div className="flex flex-row items-center gap-2 text-[#000] dark:text-[#efeee9]">
-                        <MdPerson />
-                        <p>{book.attributes.author}</p>
-                      </div>
-                      <div className="flex flex-row items-center gap-2 text-[#000] dark:text-[#efeee9]">
-                        <MdCalendarToday />
-                        <p>
-                          {new Date(
-                            book.attributes.release_date
-                          ).toLocaleDateString("pt-br")}
-                        </p>
-                      </div>
-                    </Link>
+                    <GridCard
+                      key={book.id}
+                      href={`/books/${book.attributes.slug}`}
+                      image={book.attributes.cover}
+                      alt={book.attributes.title}
+                      label={book.attributes.title}
+                    />
                   ))}
                 {data.length === 0 && <p>Nada foi encontrado</p>}
               </div>
