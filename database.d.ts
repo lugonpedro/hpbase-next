@@ -153,6 +153,8 @@ interface APIProps {
   meta: {
     pagination: {
       current: number;
+      first: number;
+      prev: number;
       next?: number;
       last?: number;
       records: number;

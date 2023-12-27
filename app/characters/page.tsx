@@ -61,9 +61,12 @@ export default function Characters() {
                   ))}
                 {data && data.data.length === 0 && <p>Nada foi encontrado</p>}
               </div>
-              {data && data.meta.pagination.last && (
+              {data && (
                 <Pagination
-                  totalPages={data.meta.pagination.last}
+                  totalPages={
+                    data.meta.pagination.last ??
+                    data.meta.pagination.first + data.meta.pagination.prev
+                  }
                   actualPage={data.meta.pagination.current}
                   onClickPreviousButton={() => setPagination(pagination - 1)}
                   onClickNextButton={() => setPagination(pagination + 1)}
