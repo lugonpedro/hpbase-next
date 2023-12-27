@@ -30,7 +30,7 @@ export default function Books() {
     <>
       <Navbar>
         <div className="defaultContainer flex flex-col gap-8">
-          <div className="max-w-[1200px] xl:self-center 2xl:w-[1200px]">
+          <div className="w-full max-w-[1200px] xl:self-center 2xl:w-[1200px]">
             <div className="flex flex-col gap-4">
               <h2>Livros</h2>
               <SearchInput
