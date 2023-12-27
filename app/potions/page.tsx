@@ -30,8 +30,6 @@ export default function Potions() {
         return;
       }
 
-      console.log(res.data);
-
       setData(res.data);
     }
 
