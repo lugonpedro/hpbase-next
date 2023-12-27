@@ -13,29 +13,35 @@ interface DataProps extends APIProps {
 
 export default function Characters() {
   const [data, setData] = useState<DataProps>();
-  // const [pagination, setPagination] = useState<APIProps>()
+  const [pagination, setPagination] = useState<number>(1);
   const [search, setSearch] = useState<string>("");
 
   useEffect(() => {
+    if (search.length > 0) {
+      setPagination(0);
+    }
+
     async function getData() {
-      const res = await api.get(`/characters?filter[name_cont]=${search}`);
+      const res = await api.get(
+        `/characters?filter[name_cont]=${search}&page[size]=16&page[number]=${pagination}`
+      );
 
       if (res == null) {
         setData(undefined);
         return;
       }
-      // setPagination(res.data)
+
       setData(res.data);
     }
 
     getData();
-  }, [search]);
+  }, [search, pagination]);
 
   return (
     <>
       <Navbar>
         <div className="defaultContainer flex flex-col gap-8">
-          <div className="max-w-[1200px] xl:self-center 2xl:w-[1200px]">
+          <div className="w-full max-w-[1200px] xl:self-center 2xl:w-[1200px]">
             <div className="flex flex-col gap-4">
               <h2>Personagens</h2>
               <SearchInput
@@ -63,7 +69,12 @@ export default function Characters() {
                 {data && data.data.length === 0 && <p>Nada foi encontrado</p>}
               </div>
               {data && data.meta.pagination.last && (
-                <Pagination pageNumbers={data.meta.pagination.last} />
+                <Pagination
+                  totalPages={data.meta.pagination.last}
+                  actualPage={data.meta.pagination.current}
+                  onClickPreviousButton={() => setPagination(pagination - 1)}
+                  onClickNextButton={() => setPagination(pagination + 1)}
+                />
               )}
             </div>
           </div>
