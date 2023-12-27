@@ -3,10 +3,7 @@ import api from "@/api";
 import { GridCard } from "@/components/Card";
 import { SearchInput } from "@/components/Input";
 import { Navbar } from "@/components/Navbar";
-import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useState } from "react";
-import { MdCalendarToday, MdPerson } from "react-icons/md";
 
 export default function Books() {
   const [data, setData] = useState<BookProps[]>([]);

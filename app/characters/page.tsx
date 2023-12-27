@@ -4,8 +4,6 @@ import { GridCard } from "@/components/Card";
 import { SearchInput } from "@/components/Input";
 import { Navbar } from "@/components/Navbar";
 import { Pagination } from "@/components/Pagination";
-import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 
 interface DataProps extends APIProps {
