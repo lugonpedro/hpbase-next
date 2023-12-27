@@ -10,8 +10,6 @@ export default async function PotionDetail(props: IPageProps) {
       return null;
     }
 
-    console.log(res.data.data);
-
     return res.data.data;
   }
 
