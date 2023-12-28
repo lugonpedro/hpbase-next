@@ -9,7 +9,7 @@ import {
   SpellCard,
 } from "../Card";
 
-describe("BookCard test", () => {
+describe("BookCard unit test", () => {
   it("should make a card", () => {
     const book: BookProps = {
       id: "123",
