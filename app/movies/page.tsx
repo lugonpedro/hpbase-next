@@ -3,6 +3,7 @@ import api from "@/api";
 import { GridCard } from "@/components/Card";
 import { SearchInput } from "@/components/Input";
 import { Navbar } from "@/components/Navbar";
+import { Pagination } from "@/components/Pagination";
 import { useEffect, useState } from "react";
 
 interface DataProps extends APIProps {
@@ -11,11 +12,14 @@ interface DataProps extends APIProps {
 
 export default function Movies() {
   const [data, setData] = useState<DataProps>();
+  const [pagination, setPagination] = useState<number>(1);
   const [search, setSearch] = useState<string>("");
 
   useEffect(() => {
     async function getData() {
-      const res = await api.get(`/movies?filter[title_cont]=${search}`);
+      const res = await api.get(
+        `/movies?filter[title_cont]=${search}&page[size]=16&page[number]=${pagination}`
+      );
 
       if (res == null) {
         setData(undefined);
@@ -26,7 +30,7 @@ export default function Movies() {
     }
 
     getData();
-  }, [search]);
+  }, [search, pagination]);
 
   return (
     <>
@@ -52,6 +56,14 @@ export default function Movies() {
                   ))}
                 {data && data.data.length === 0 && <p>Nada foi encontrado</p>}
               </div>
+              {data && (
+                <Pagination
+                  pages={Math.ceil(data.meta.pagination.records / 16)}
+                  activeIndex={data.meta.pagination.current}
+                  onClickPreviousButton={() => setPagination(pagination - 1)}
+                  onClickNextButton={() => setPagination(pagination + 1)}
+                />
+              )}
             </div>
           </div>
         </div>

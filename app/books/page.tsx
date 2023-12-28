@@ -3,26 +3,34 @@ import api from "@/api";
 import { GridCard } from "@/components/Card";
 import { SearchInput } from "@/components/Input";
 import { Navbar } from "@/components/Navbar";
+import { Pagination } from "@/components/Pagination";
 import { useEffect, useState } from "react";
 
+interface DataProps extends APIProps {
+  data: BookProps[];
+}
+
 export default function Books() {
-  const [data, setData] = useState<BookProps[]>([]);
+  const [data, setData] = useState<DataProps>();
+  const [pagination, setPagination] = useState<number>(1);
   const [search, setSearch] = useState<string>("");
 
   useEffect(() => {
     async function getData() {
-      const res = await api.get(`/books?filter[title_cont]=${search}`);
+      const res = await api.get(
+        `/books?filter[title_cont]=${search}&page[size]=16&page[number]=${pagination}`
+      );
 
       if (res == null) {
-        setData([]);
+        setData(undefined);
         return;
       }
 
-      setData(res.data.data);
+      setData(res.data);
     }
 
     getData();
-  }, [search]);
+  }, [search, pagination]);
 
   return (
     <>
@@ -37,7 +45,7 @@ export default function Books() {
               />
               <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
                 {data &&
-                  data.map((book: BookProps) => (
+                  data.data.map((book: BookProps) => (
                     <GridCard
                       key={book.id}
                       href={`/books/${book.attributes.slug}`}
@@ -46,8 +54,16 @@ export default function Books() {
                       label={book.attributes.title}
                     />
                   ))}
-                {data.length === 0 && <p>Nada foi encontrado</p>}
+                {data && data.data.length === 0 && <p>Nada foi encontrado</p>}
               </div>
+              {data && (
+                <Pagination
+                  pages={Math.ceil(data.meta.pagination.records / 16)}
+                  activeIndex={data.meta.pagination.current}
+                  onClickPreviousButton={() => setPagination(pagination - 1)}
+                  onClickNextButton={() => setPagination(pagination + 1)}
+                />
+              )}
             </div>
           </div>
         </div>

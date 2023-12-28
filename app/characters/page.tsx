@@ -16,10 +16,6 @@ export default function Characters() {
   const [search, setSearch] = useState<string>("");
 
   useEffect(() => {
-    if (search.length > 0) {
-      setPagination(0);
-    }
-
     async function getData() {
       const res = await api.get(
         `/characters?filter[name_cont]=${search}&page[size]=16&page[number]=${pagination}`
@@ -63,11 +59,8 @@ export default function Characters() {
               </div>
               {data && (
                 <Pagination
-                  totalPages={
-                    data.meta.pagination.last ??
-                    data.meta.pagination.first + data.meta.pagination.prev
-                  }
-                  actualPage={data.meta.pagination.current}
+                  pages={Math.ceil(data.meta.pagination.records / 16)}
+                  activeIndex={data.meta.pagination.current}
                   onClickPreviousButton={() => setPagination(pagination - 1)}
                   onClickNextButton={() => setPagination(pagination + 1)}
                 />
