@@ -32,7 +32,7 @@ export function Navbar({ children }: any) {
 
   return (
     <div>
-      <div className="w-screen overflow-x-hidden fixed z-50 h-16 bg-[#c39a1c] flex flex-row items-center justify-between px-4 xl:hidden">
+      <div className="w-screen overflow-x-hidden fixed z-50 h-16 bg-[#4040ff] flex flex-row items-center justify-between px-4 xl:hidden">
         <h1 className="text-[#000] drop-shadow-md">🧙‍♀️ Portal da Magia</h1>
         <MdMenu
           className="h-8 w-8 text-[#000] cursor-pointer"
@@ -48,7 +48,7 @@ export function Navbar({ children }: any) {
               className="fixed bg-[#000] h-screen w-screen left-0 top-0 z-50"
             >
               <div className="w-screen h-16 px-4 flex flex-row items-center justify-between mb-6">
-                <h1 className="text-[#c39a1c] drop-shadow-md">
+                <h1 className="text-[#4040ff] drop-shadow-md">
                   🧙‍♀️ Portal da Magia
                 </h1>
                 <MdClose
@@ -105,7 +105,7 @@ export function Navbar({ children }: any) {
 
       <div className="flex flex-row">
         <div className="bg-[#000] p-4 hidden flex-col gap-2 h-screen w-[300px] xl:flex fixed">
-          <h1 className="text-[#c39a1c] drop-shadow-md px-4 mb-6">
+          <h1 className="text-[#4040ff] drop-shadow-md px-4 mb-6">
             🧙‍♀️ Portal da Magia
           </h1>
           <div className="flex flex-col px-4 gap-2">
@@ -176,8 +176,8 @@ function NavbarItem(props: NavbarItemProps) {
   return (
     <Link
       href={props.link}
-      className={`flex flex-row items-center gap-2 text-[#efeee9] text-[14px] font-semibold xl:text-[18px] xl:w-max duration-300 hover:text-[#c39a1c]/80 ${
-        actualPage === props.link ? "text-[#c39a1c] hover:text-[#c39a1c]" : ""
+      className={`flex flex-row items-center gap-2 text-[#efeee9] text-[14px] font-semibold xl:text-[18px] xl:w-max duration-300 hover:text-[#4040ff]/80 ${
+        actualPage === props.link ? "text-[#4040ff] hover:text-[#4040ff]" : ""
       }`}
     >
       {props.icon}
@@ -192,7 +192,7 @@ function DarkModeButton() {
   return (
     <div
       onClick={toggleDarkMode}
-      className="flex flex-row items-center gap-2 text-[#efeee9] text-[14px] font-semibold xl:text-[18px] xl:w-max duration-300 hover:text-[#c39a1c]/80 cursor-pointer"
+      className="flex flex-row items-center gap-2 text-[#efeee9] text-[14px] font-semibold xl:text-[18px] xl:w-max duration-300 hover:text-[#4040ff]/80 cursor-pointer"
     >
       {darkMode ? (
         <>
