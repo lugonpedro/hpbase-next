@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* #641e1e	 */
-/* #c39a1c	 */
-/* #3d2f22	 */
-/* #717679	 */
-/* #efeee9	 */
-
 h1, h2, h3, h4, h5, h6, p, li {
   @apply text-[#000] dark:text-[#efeee9];
 }
