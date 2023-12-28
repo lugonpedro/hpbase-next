@@ -24,7 +24,7 @@ export default async function MovieDetail(props: IPageProps) {
               <>
                 <div className="flex flex-col md:flex-row md:gap-4">
                   <Image
-                    src={data.attributes.poster}
+                    src={data.attributes.poster ?? "/dementor.png"}
                     alt={data.attributes.slug}
                     width={300}
                     height={300}

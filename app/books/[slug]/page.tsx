@@ -35,7 +35,7 @@ export default async function BookDetail(props: IPageProps) {
               <>
                 <div className="flex flex-col md:flex-row md:gap-4">
                   <Image
-                    src={data.attributes.cover}
+                    src={data.attributes.cover ?? "/dementor.png"}
                     alt={data.attributes.slug}
                     width={300}
                     height={300}

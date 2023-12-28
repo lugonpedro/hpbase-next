@@ -24,7 +24,7 @@ export default async function SpellDetail(props: IPageProps) {
               <>
                 <div className="flex flex-col md:flex-row md:gap-4">
                   <Image
-                    src={data.attributes.image}
+                    src={data.attributes.image ?? "/dementor.png"}
                     alt={data.attributes.slug}
                     width={300}
                     height={300}
