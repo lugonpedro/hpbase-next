@@ -28,7 +28,7 @@ export default async function CharacterDetail(props: IPageProps) {
                     alt={data.attributes.slug}
                     width={300}
                     height={300}
-                    className="rounded-xl object-cover w-full md:max-w-[50vw]"
+                    className="rounded-xl object-cover w-full md:max-w-[50vw] xl:max-w-[25vw]"
                   />
                   <div className="flex flex-col gap-4 mt-4 md:mt-0">
                     <h2>{data.attributes.name}</h2>
